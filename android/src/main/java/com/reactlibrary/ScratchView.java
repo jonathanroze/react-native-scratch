@@ -40,7 +40,7 @@ public class ScratchView extends View implements View.OnTouchListener {
     boolean cleared;
     int clearPointsCounter;
     float scratchProgress;
-    int placeholderColor = -1;
+    int Color = -1;
 
     Paint imagePaint = new Paint();
     Paint pathPaint = new Paint();
@@ -80,10 +80,10 @@ public class ScratchView extends View implements View.OnTouchListener {
         setLayerType(View.LAYER_TYPE_SOFTWARE, null);
     }
 
-    public void setPlaceholderColor(@Nullable String placeholderColor) {
-        if (placeholderColor != null) {
+    public void setColor(@Nullable String Color) {
+        if (Color != null) {
             try {
-                this.placeholderColor = Color.parseColor(placeholderColor);
+                this.Color = Color.parseColor(Color);
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -231,7 +231,7 @@ public class ScratchView extends View implements View.OnTouchListener {
         }
 
         if (!imageTakenFromView) {
-            canvas.drawColor(this.placeholderColor != -1 ? this.placeholderColor : Color.GRAY);
+            canvas.drawColor(this.Color != -1 ? this.Color : Color.parseColor("#00ff0000"));
         }
 
         if (image == null) {
