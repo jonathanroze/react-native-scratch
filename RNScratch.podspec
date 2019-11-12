@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.name                = "RNScratch"
   s.version             = package["version"]
   s.description         = package["description"]
-  s.summary             = package['description']
+  s.summary             = package['summary']
   s.license             = package['license']
   s.homepage            = package['homepage']
   s.authors             = "Invertase Limited"
