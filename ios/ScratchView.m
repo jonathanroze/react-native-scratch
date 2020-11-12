@@ -219,12 +219,13 @@
   //path = [UIBezierPath bezierPath];
   //path.lineWidth = brushSize;
     CGPoint point = [touch locationInView:self];
-  path = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(point.x, point.y, brushSize, brushSize)];
-  [path fill];
+    path = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(point.x, point.y, brushSize, brushSize)];
+    [UIColor.grayColor setFill];
+    [path fill];
 
   //CGPoint point = [touch locationInView:self];
   //[path moveToPoint:point];
-  [self drawImageStart];
+    [self drawImageStart];
 }
 
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
