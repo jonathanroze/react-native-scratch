@@ -223,9 +223,12 @@
     [UIColor.grayColor setFill];
     [path fill];
 
+    //CAShapeLayer *circleLayer = [CAShapeLayer layer];
+   // [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(point.x, point.y, brushSize, brushSize)] CGPath]];
+    
   //CGPoint point = [touch locationInView:self];
-  //[path moveToPoint:point];
-    [self drawImageStart];
+  [path moveToPoint:point];
+    [self drawImageStart ];
 }
 
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
