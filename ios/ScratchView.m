@@ -216,19 +216,16 @@
 {
   [self reportTouchState:true];
   UITouch *touch = [touches anyObject];
-  //path = [UIBezierPath bezierPath];
-  //path.lineWidth = brushSize;
-    CGPoint point = [touch locationInView:self];
-    path = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(point.x, point.y, brushSize, brushSize)];
-    [UIColor.grayColor setFill];
-    [path fill];
-
-    //CAShapeLayer *circleLayer = [CAShapeLayer layer];
-   // [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(point.x, point.y, brushSize, brushSize)] CGPath]];
+  
+  path = [UIBezierPath bezierPath];
+  path.lineWidth = brushSize;
+  path.lineJoinStyle = kCGLineJoinRound;
+  path.lineCapStyle = kCGLineCapRound;
     
-  //CGPoint point = [touch locationInView:self];
+  CGPoint point = [touch locationInView:self];
+    
   [path moveToPoint:point];
-    [self drawImageStart ];
+  [self drawImageStart ];
 }
 
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
