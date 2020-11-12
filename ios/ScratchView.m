@@ -217,9 +217,11 @@
   [self reportTouchState:true];
   UITouch *touch = [touches anyObject];
   //path = [UIBezierPath bezierPath];
-    path = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(0, 0, brushSize, brushSize)];
   //path.lineWidth = brushSize;
-  
+    
+  path = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(0, 0, brushSize, brushSize)];
+  [path fill];
+
   CGPoint point = [touch locationInView:self];
   [path moveToPoint:point];
   [self drawImageStart];
