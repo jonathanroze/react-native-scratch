@@ -21,6 +21,16 @@ class ScratchView extends Component {
                 outputRange: [1, 0],
             }),
         };
+
+        this.reveal = this._reveal.bind(this)
+    }
+
+    _reveal = () => {
+        Animated.timing(this.state.animatedValue, {
+            toValue: 0,
+            duration: 300,
+            useNativeDriver: true,
+        }).start();
     }
 
     _onImageLoadFinished = (e) => {
